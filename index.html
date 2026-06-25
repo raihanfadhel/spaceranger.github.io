@@ -104,7 +104,9 @@
 /* --- RESPONSIVITAS (Tampilan Layar HP) --- */
 @media (max-width: 768px) {
     .layout-container {
-        flex-direction: column; /* Mengubah 2 kolom menjadi atas-bawah saat dibuka di HP */
+        flex-direction: column; 
+        padding: 0 1rem; /* Mengurangi jarak kosong di kiri & kanan agar teks lebih lebar */
+        margin-top: 1.5rem; /* Mengurangi jarak kosong di atas agar tidak terlalu jauh */
     }
     .sidebar {
         text-align: center; /* Memposisikan profil di tengah saat di HP */
@@ -113,10 +115,7 @@
         justify-content: center; /* Menengahkan ikon dan teks saat di HP */
     }
 
-    p {
-        text-align: left; /* Mengembalikan teks jadi rata kiri khusus di HP */
-        text-justify: auto; /* Menghilangkan paksaan spasi antar-kata */
-    }
+
 }
 
         /* Menyembunyikan banner atas Google Translate yang muncul otomatis */
