@@ -272,7 +272,7 @@
             <div class="action-btns">
                 <div id="google_translate_element"></div>
                 
-                <button class="btn" id="theme-btn">🌙 Dark Mode</button>
+                <button class="btn" id="theme-btn">🌙</button>
             </div>
         </nav>
     </header>
@@ -296,15 +296,22 @@
 
         <div class="blog-list">
             <h2>New and Featured Posts</h2>
-        <a href="onmipa2024eldin.html" class="blog-card">
-            <h3>Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2024 Subbidang Elektrodinamika (ID)</h3>
-            <p>Tinjau sebuah partikel ion atom X yang mempunyai potensial berbentuk ....</p>
+        <a href="onmipa2025fismodkuantum.html" class="blog-card">
+            <h3>Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2025 Subbidang Fisika Modern dan Mekanika Kuantum (ID)</h3>
+            <p>Sebuah partikel bermassa $m$ bergerak dalam potensial Osilator Harmonik Isotropik tiga dimensi ....</p>
             <span class="read-more">Read more &rarr;</span>
         </a>
 
-        <a href="onmipa2024fismodkuantum.html" class="blog-card">
-            <h3>Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2024 Subbidang Fisika Modern dan Mekanika Kuantum (ID)</h3>
-            <p>Tinjau sebuah partikel dalam kotak satu dimensi sepanjang $a$ ....</p>
+        <a href="onmipa2025termostat.html" class="blog-card">
+            <h3>Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2025 Subbidang Termodinamika dan Fisika Statistik (ID)</h3>
+            <p>Lubang hitam Kerr dicirikan oleh massa $M$ dan momentum sudut $J$ ....</p>
+            <span class="read-more">Read more &rarr;</span>
+        </a>
+
+
+        <a href="onmipa2024eldin.html" class="blog-card">
+            <h3>Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2024 Subbidang Elektrodinamika (ID)</h3>
+            <p>Tinjau sebuah partikel ion atom X yang mempunyai potensial berbentuk ....</p>
             <span class="read-more">Read more &rarr;</span>
         </a>
 
@@ -312,7 +319,7 @@
 
 
     <footer>
-        <p>&copy; 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        <p>@ 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
     </footer>
 
     <script type="text/javascript">
@@ -332,18 +339,18 @@
 
         if (currentTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
-            themeBtn.innerHTML = '☀️ Light Mode';
+            themeBtn.innerHTML = '☀️';
         }
 
         themeBtn.addEventListener('click', () => {
             if (document.body.getAttribute('data-theme') === 'dark') {
                 document.body.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                themeBtn.innerHTML = '🌙 Dark Mode';
+                themeBtn.innerHTML = '🌙';
             } else {
                 document.body.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeBtn.innerHTML = '☀️ Light Mode';
+                themeBtn.innerHTML = '☀️';
             }
         });
     </script>

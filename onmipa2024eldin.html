@@ -161,7 +161,7 @@
         }
 
         /* --- FOOTER --- */
-        footer {
+        footer p{
             text-align: center;
             padding: 2rem 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -275,7 +275,7 @@
             <div class="action-btns">
                 <div id="google_translate_element"></div>
                 
-                <button class="btn" id="theme-btn">🌙 Dark Mode</button>
+                <button class="btn" id="theme-btn">🌙</button>
             </div>
         </nav>
     </header>
@@ -501,11 +501,9 @@ misal $u = r^2+z^2$
 
     <p><b>Jawaban:</b></p>
 
-    <p>a. a)] Misalkan terdapat dua buah kerangka $O$ dan $O'$.
+    <p>a. Misalkan terdapat dua buah kerangka $O$ dan $O'$.
     
     Transformasi Lorentz antara $O$ dan $O'$ dapat diketahui dengan ilustrasi berikut:
-    
-    % (Silakan masukkan gambar ilustrasi di sini jika diperlukan menggunakan \includegraphics)
     
     Maka terlihat bahwa ungkapan $\vec{r}$ terbagi menjadi dua, yaitu komponen yang sejajar dengan $\vec{v}$ ($\vec{r}_\parallel$) dan tegak lurus dengan $\vec{v}$ ($\vec{r}_\perp$). Akibatnya, komponen $\vec{r}_\perp$ dan $\vec{r}_\parallel$ bertransformasi menjadi:
     \begin{align*}
@@ -722,7 +720,7 @@ Sedangkan untuk energi $E'$ di kerangka $O'$ adalah
 
 
     <footer>
-        <p>&copy; 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        <p>@ 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
     </footer>
 
     <script type="text/javascript">
@@ -742,18 +740,18 @@ Sedangkan untuk energi $E'$ di kerangka $O'$ adalah
 
         if (currentTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
-            themeBtn.innerHTML = '☀️ Light Mode';
+            themeBtn.innerHTML = '☀️';
         }
 
         themeBtn.addEventListener('click', () => {
             if (document.body.getAttribute('data-theme') === 'dark') {
                 document.body.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                themeBtn.innerHTML = '🌙 Dark Mode';
+                themeBtn.innerHTML = '🌙';
             } else {
                 document.body.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeBtn.innerHTML = '☀️ Light Mode';
+                themeBtn.innerHTML = '☀️';
             }
         });
     </script>

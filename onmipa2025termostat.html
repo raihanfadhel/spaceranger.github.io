@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raihan Fadhel | ONMIPA 2025 Termo</title>
+    <style>
+        /* --- SKEMA WARNA & VARIABEL --- */
+        :root {
+            --bg-color: #f7ede2; 
+            --text-color: #3d3124;
+            --link-color: #a67c52;
+            --header-bg: #eaddcb;
+            --border-color: #d4c2ab;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #251e16; 
+            --text-color: #f2e6d8;
+            --link-color: #dcb38a;
+            --header-bg: #1c1610;
+            --border-color: #4a3c2d;
+        }
+
+        p {text-align: justify;}
+
+        /* --- STYLING DASAR --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            
+            /* Mencegah Google Translate menggeser halaman ke bawah */
+            top: 0 !important; 
+        }
+
+        /* Menyembunyikan banner atas Google Translate yang muncul otomatis */
+        .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
+        .goog-te-banner-frame { display: none !important; }
+
+        /* --- HEADER & NAVIGASI --- */
+        header {
+            background-color: var(--header-bg);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--link-color);
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        /* --- TOMBOL AKSI & WIDGET TRANSLATE --- */
+        .action-btns {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Modifikasi Dropdown Google Translate agar senada dengan desain elegan */
+        #google_translate_element select {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Menyembunyikan teks 'Powered by Google' */
+        .goog-logo-link, .goog-te-gadget span {
+            display: none !important;
+        }
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0;
+        }
+
+        /* --- KONTEN UTAMA --- */
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        h2, h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer p{
+            text-align: center;
+            padding: 2rem 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            opacity: 0.8;
+        }
+
+        .date {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        .gambar-tengah {
+    display: block;
+    margin: 2rem auto; /* Memberi jarak atas-bawah dan memposisikan gambar di tengah */
+    max-width: 100%; /* Memastikan gambar tidak melebihi lebar layar */
+    width: 400px; /* Kamu bisa mengubah angka ini untuk memperbesar/memperkecil gambar */
+    border-radius: 8px; /* Opsional: Membuat sudut gambar menjadi sedikit membulat/tidak lancip */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Opsional: Memberi efek bayangan tipis agar elegan */
+}
+
+       /* --- STYLING UNTUK NAMA & FOTO DI HEADER --- */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak spasi antara foto dan nama */
+}
+
+.header-avatar {
+    width: 50px; /* Memaksa foto menjadi ukuran kecil/avatar */
+    height: 50px;
+    border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
+    object-fit: cover; /* Mencegah gambar terlihat gepeng/tertarik */
+    border: 2px solid var(--border-color); /* Memberikan garis tepi tipis agar elegan */
+}
+
+        .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: inherit; /* Mengikuti warna teks tema */
+    display: block;
+}
+
+.blog-card:hover {
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transform: translateY(-2px); /* Efek sedikit terangkat saat disentuh kursor */
+}
+
+.blog-card h3 {
+    margin-top: 0;
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+    color: var(--link-color);
+}
+
+.blog-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--link-color);
+}
+    </style>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <div class="header-brand">
+            <img src="images/fotoku.jpeg" alt="Foto Profil" class="header-avatar">
+            <h1>Raihan Fadhel</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="blog.html">Blog</a>
+            
+            <div class="action-btns">
+                <div id="google_translate_element"></div>
+                
+                <button class="btn" id="theme-btn">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    <a href="projects.html" style="display: inline-block; margin-bottom: 2rem; font-size: 0.9rem;">
+        &larr; Return to the project lists
+    </a>
+
+    <h2 style="border-bottom: none; margin-top: 0; padding-bottom: 0;">Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2025 Subbidang Termodinamika dan Fisika Statistik</h2>
+    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0;">Originally published on May 25th, 2026.</p>
+
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+    <h2>Soal nomor 1</h2>
+
+    <p>Lubang hitam Kerr dicirikan oleh massa $M$ dan momentum sudut $J$. Dalam Termodinamika lubang hitam, massa $M$ berperan sebagai energi internal $U$ dan luas horizon $A$ berperan sebagai entropi $S$. Luas horizon $A$ dari lubang hitam Kerr dengan massa $M$ dan momentum sudut $J$ diberikan oleh (dalam unit geometri $G=c=1$):
+$$A = 4\pi\left(2M^{2} - \frac{J^{2}}{M^{2}} + 2M\sqrt{M^{4}-J^{2}}\right)$$
+Kecepatan sudut horizon $\Omega$ adalah analog termodinamika dari potensial kimia/tekanan.
+Hukum 1 termodinamika lubang hitam berbentuk:
+$$dM = \frac{1}{8\pi}T~dA + \Omega~dJ$$
+dengan $T$ adalah suhu horizon lubang hitam. Tentukan:</p>
+
+    <ol type="a">
+        <li>ekspresi matematis dalam turunan parsial untuk suhu horizon $T$ dan kecepatan sudut horizon $\Omega$ dari lubang hitam Kerr menggunakan hukum 1 di atas;</li>
+        <li>Nyatakan suhu horizon $T$ dan kecepatan sudut horizon $\Omega$ dalam $M$ dan $J$;</li>
+        <li>nubungan Maxwell yang menghubungkan perubahan suhu horizon $T$ dengan perubahan kecepatan sudut horizon $\Omega$;</li>
+        <li>energi bebas Gibbs $G$ untuk lubang hitam ini;</li>
+        <li>berturut-turut kuantitas termodinamik yang merupakan turunan parsial energi bebas Gibbs $G$ terhadap suhu horizon $T$ dan momentum sudut horizon $J$.</li>
+    </ol>
+
+    <p><b>Jawaban:</b></p>
+
+    <p>a. Dari ungkapan hukum 1, diketahui $dM$ merupakan turunan total $M$ sebagai fungsi $A$ dan $J$. Maka $dM$ dapat ditulis ulang menjadi:
+$$dM = \left.\frac{\partial M}{\partial A}\right|_{J} dA + \left.\frac{\partial M}{\partial J}\right|_{A} dJ$$
+
+Menyamakan masing-masing suku, diperoleh:
+$$\frac{T}{8\pi} = \left.\frac{\partial M}{\partial A}\right|_{J} \Rightarrow T = 8\pi \left.\frac{\partial M}{\partial A}\right|_{J} \quad \text{dan} \quad \Omega = \left.\frac{\partial M}{\partial J}\right|_{A}$$</p>
+
+    <br>
+
+
+    <p>b. Dari soal, diberikan ungkapan luas horizon $A$ sebagai fungsi $M$ dan $J$.
+Pertama, untuk $T$, menggunakan aturan kebalikan $\left.\frac{\partial A}{\partial B}\right|_{C} = \frac{1}{\left.\frac{\partial B}{\partial A}\right|_{C}}$ diperoleh:
+$$T = 8\pi \frac{1}{\left.\frac{\partial A}{\partial M}\right|_{J}}$$
+
+Menghitung $\left.\frac{\partial A}{\partial M}\right|_{J}$:
+$$\left.\frac{\partial A}{\partial M}\right|_{J} = 4\pi \frac{\partial}{\partial M} \left(2M^{2} - \frac{J^{2}}{M^{2}} + 2M\sqrt{M^{4}-J^{2}}\right)$$
+$$= 4\pi \left( 4M - (-2)\frac{J^{2}}{M^{3}} + 2\sqrt{M^{4}-J^{2}} + 2M\left(\frac{1}{2}\frac{1}{\sqrt{M^{4}-J^{2}}} \cdot 4M^{3}\right) \right)$$
+$$= 4\pi \left( 4M + \frac{2J^{2}}{M^{3}} + 2\sqrt{M^{4}-J^{2}} + \frac{4M^{4}}{\sqrt{M^{4}-J^{2}}} \right)$$
+
+Maka:
+$$T = 2\left( 4M + \frac{2J^{2}}{M^{3}} + 2\sqrt{M^{4}-J^{2}} + \frac{4M^{4}}{\sqrt{M^{4}-J^{2}}} \right)^{-1}$$
+
+Kedua, untuk $\Omega$, menggunakan aturan siklik
+$$\left.\frac{\partial A}{\partial B}\right|_{C} \left.\frac{\partial B}{\partial C}\right|_{A} \left.\frac{\partial C}{\partial A}\right|_{B} = -1$$
+diperoleh
+$$\Omega = - \frac{\left.\frac{\partial A}{\partial J}\right|_{M}}{\left.\frac{\partial A}{\partial M}\right|_{J}}$$
+
+Menghitung $\left.\frac{\partial A}{\partial J}\right|_{M}$:
+$$\left.\frac{\partial A}{\partial J}\right|_{M} = 4\pi \frac{\partial}{\partial J} \left( 2M^{2} - \frac{J^{2}}{M^{2}} + 2M\sqrt{M^{4}-J^{2}} \right)\Bigg|_{M}$$
+$$= 4\pi \left( -\frac{2J}{M^{2}} + 2M \frac{1}{2} \frac{1}{\sqrt{M^{4}-J^{2}}} (-2J) \right)$$
+$$= 4\pi \left( -\frac{2J}{M^{2}} - \frac{2JM}{\sqrt{M^{4}-J^{2}}} \right) = -8\pi J \left( \frac{1}{M^{2}} + \frac{M}{\sqrt{M^{4}-J^{2}}} \right)$$
+
+Maka
+$$\Omega = - \frac{-8\pi J \left( \frac{1}{M^{2}} + \frac{M}{\sqrt{M^{4}-J^{2}}} \right)}{4\pi \left( 4M + \frac{2J^{2}}{M^{3}} + 2\sqrt{M^{4}-J^{2}} + \frac{4M^{4}}{\sqrt{M^{4}-J^{2}}} \right)}$$
+$$\Omega = \frac{2J \left( \frac{1}{M^{2}} + \frac{M}{\sqrt{M^{4}-J^{2}}} \right)}{4M + \frac{2J^{2}}{M^{3}} + 2\sqrt{M^{4}-J^{2}} + \frac{4M^{4}}{\sqrt{M^{4}-J^{2}}}}$$</p>
+
+<br>
+
+<p>c. Sebelumnya, diketahui bahwa
+$$T = 8\pi \left.\frac{\partial M}{\partial A}\right|_{J} \quad \text{dan} \quad \Omega = \left.\frac{\partial M}{\partial J}\right|_{A}$$
+Karena
+$$\frac{\partial^{2} M}{\partial J \partial A} = \frac{\partial^{2} M}{\partial A \partial J}$$
+maka diperoleh relasi berupa:
+$$\frac{1}{8\pi} \left.\frac{\partial T}{\partial J}\right|_{A} = \left.\frac{\partial \Omega}{\partial A}\right|_{J}$$</p>
+
+<br>
+
+<p>Energi bebas Gibbs didefinisikan oleh $G = H - TS$, dengan $H = U + PV$.
+$G$ dapat ditulis ulang sebagai
+$$G = U + PV - TS$$
+
+Sebelumnya, diketahui dari narasi soal dan analogi hukum 1 termodinamika lubang hitam bahwa:
+$M \Rightarrow U$
+$A \Rightarrow S$
+$dM = \frac{T}{8\pi} dA + \Omega dJ$
+$dU = T dS - P dV$
+yang membuat $T \Rightarrow \frac{T}{8\pi}$
+$\Omega \Rightarrow -P$
+$J \Rightarrow V$.
+
+Sehingga
+$$G = M - \Omega J - \frac{T A}{8\pi}$$</p>
+
+<br>
+
+<p>Mengambil turunan total $G$, diperoleh
+$$dG = dM - \Omega dJ - J d\Omega - \frac{1}{8\pi}(T dA + A dT)$$
+atau
+$$dG = \frac{T}{8\pi} dA + \Omega dJ - \Omega dJ - J d\Omega - \frac{1}{8\pi} T dA - \frac{1}{8\pi} A dT$$
+$$= - J d\Omega - \frac{A}{8\pi} dT$$
+$$dG = \left.\frac{\partial G}{\partial \Omega}\right|_{T} d\Omega + \left.\frac{\partial G}{\partial T}\right|_{\Omega} dT, \quad \text{dengan} \quad \left.\frac{\partial G}{\partial \Omega}\right|_{T} = -J \quad \text{dan} \quad \left.\frac{\partial G}{\partial T}\right|_{\Omega} = -\frac{A}{8\pi}$$</p>
+
+<p><b>Catatan: </b> Saya bingung, mungkin jika mau dapat kuantitas termodinamik yang merupakan turunan parsial suatu besaran terhadap $T$ dan $J$ (misal $\Omega$ dan $A$), bukan diperoleh dari energi bebas Gibbs, melainkan energi bebas Helmholtz $F$, yang didefinisikan sebagai $F = U - TS = M - \frac{T}{8\pi} A$
+sehingga $dF = dM - \frac{1}{8\pi}(T dA + A dT) = \frac{T}{8\pi}dA + \Omega dJ - \frac{T}{8\pi} dA - \frac{A}{8\pi} dT = \Omega dJ - \frac{A}{8\pi} dT$
+dan diperoleh
+$$\left.\frac{\partial F}{\partial J}\right|_{T} = \Omega \quad \text{dan} \quad \left.\frac{\partial F}{\partial T}\right|_{J} = -\frac{A}{8\pi}$$
+persis seperti perintah soal.</p>
+
+    <h2>Soal nomor 2</h2>
+    
+    <p>Tinjaulah sebuah sistem yang terdiri dari N fermion identik (misalnya elektron) yang terperangkap dalam suatu sumur potensial yang sangat kecil. Karena ukurannya yang terbatas, sistem tersebut hanya memiliki dua tingkat energi tunggal yang tersedia untuk setiap fermion: $\epsilon_{1}=0$ dan $\epsilon_{2}=\Delta$ (dengan $\Delta>0$). Setiap tingkat energi dapat menampung maksimal satu fermion sesuai dengan prinsip larangan Pauli. Sistem ini berada dalam kontak termal dan partikel dengan reservoir yang sangat besar, dikarakterisasi oleh suhu $T$ dan potensial kimia $\mu$. Diketahui kuantitas $k_{B}$ adalah konstanta Boltzmann. Tentukan:</p>
+
+    <ol type="a">
+        <li>persamaan fundamental untuk potensial termodinamika besar $\Phi$ sebagai fungsi dari suhu $T$, volume $V$, dan potensial kimia $\mu$ untuk sistem umum;</li>
+        <li>Fungsi Partisi Besar $Z$ untuk sistem dua tingkat energi ini. Nyatakan $Z$ dalam bentuk $\beta=1/k_{B}T$, $\Delta$, dan $\mu$;</li>
+        <li>rata-rata jumlah partikel $\langle N \rangle$ dalam sistem dengan menggunakan $Z$;</li>
+        <li>rata-rata entropi sistem $\langle S \rangle$ dalam sistem dengan menggunakan $Z$.</li>
+    </ol>
+
+
+    <p><b>Jawaban:</b></p>
+
+    <p>a. Jika kita menambahkan partikel pada suatu sistem, maka energi dalam sistem akan berubah sebesar $\mu dN$, yang membuat energi dalam harus diekspresikan sebagai
+$$dU = TdS - PdV + \mu dN$$
+Besaran potensial termodinamika besar $\Phi$ didefinisikan sebagai
+$$\Phi = U - TS - \mu N$$
+Mengambil turunan total $\Phi$, diperoleh
+$$d\Phi = dU - TdS - SdT - \mu dN - Nd\mu$$
+atau
+$$d\Phi = TdS - PdV + \mu dN - TdS - SdT - \mu dN - Nd\mu$$
+$$d\Phi = -PdV - SdT - Nd\mu$$
+$$\Phi(V,T,\mu) = \int -(PdV + SdT + Nd\mu)$$</p>
+
+<br>
+
+
+    <p> Fungsi partisi besar didefinisikan sebagai
+$$Z = \sum_{i} e^{\beta n_{i}(\mu-\epsilon_{i})}$$
+dengan $n_i$ adalah banyaknya partikel, dan $\epsilon_i$ adalah tingkatan energi. Asas larangan Pauli hanya mengijinkan maksimal satu partikel pada tiap tingkatan energi. Sehingga</p>
+
+    <p>Untuk $\epsilon_1 = 0$,
+$$Z_1 = \sum_{n_1=0}^{1} e^{\beta n_1(\mu-\epsilon_1)} = e^{\beta(0)} + e^{\beta(\mu-0)} = 1 + e^{\beta\mu}$$
+
+Untuk $\epsilon_2 = \Delta$,
+$$Z_2 = \sum_{n_2=0}^{1} e^{\beta n_2(\mu-\epsilon_2)} = e^{\beta(0)} + e^{\beta(\mu-\Delta)} = 1 + e^{\beta(\mu-\Delta)}$$
+
+atau $Z = Z_{1} \cdot Z_{2} = (1+e^{\beta\mu})(1+e^{\beta(\mu-\Delta)})$</p>
+
+<br>
+
+    <p>c. $\Phi$ jika dinyatakan dalam $Z$ memiliki ungkapan $\Phi = -k_{B}T \ln Z$.
+Perhatikan persamaan $d\Phi = -PdV - SdT - Nd\mu$. Dari sini, diperoleh
+bahwa $\langle N \rangle = -\left.\frac{\partial\Phi}{\partial\mu}\right|_{V,T} = -\frac{\partial}{\partial\mu}(-k_{B}T \ln Z)\Big|_{V,T}$
+$$= \frac{1}{\beta}\frac{\partial}{\partial\mu}(\ln Z)\Big|_{V,T}$$
+
+Menghitung $\frac{\partial}{\partial\mu}\ln(Z) = \frac{\partial \ln Z}{\partial Z} \frac{\partial Z}{\partial \mu}\Big|_{V,T}$
+$$= \frac{1}{Z}\frac{\partial}{\partial\mu}\left[(1+e^{\beta\mu})(1+e^{\beta(\mu-\Delta)})\right]\Big|_{V,T}$$
+$$= \frac{1}{Z}\left[\beta e^{\beta\mu}(1+e^{\beta(\mu-\Delta)}) + (1+e^{\beta\mu})(\beta e^{\beta(\mu-\Delta)})\right]$$
+$$= \frac{\beta e^{\beta\mu}}{1+e^{\beta\mu}} + \frac{\beta e^{\beta(\mu-\Delta)}}{1+e^{\beta(\mu-\Delta)}}$$
+$$= \frac{\beta}{e^{-\beta\mu}+1} + \frac{\beta}{e^{-\beta(\mu-\Delta)}+1}$$
+atau
+$$\langle N \rangle = \frac{1}{e^{-\beta\mu}+1} + \frac{1}{e^{-\beta(\mu-\Delta)}+1}$$</p>
+<br>
+
+<p>d. Dari c) diperoleh $\langle S \rangle = -\left.\frac{\partial\Phi}{\partial T}\right|_{V,\mu} = -\frac{\partial}{\partial T}(-k_{B}T \ln Z)\Big|_{V,\mu}$
+$$= k_{B}\ln(Z) + k_{B}T\frac{\partial \ln Z}{\partial T}$$
+
+Menghitung $\frac{\partial \ln Z}{\partial T} = \frac{\partial \beta}{\partial T} \frac{\partial \ln Z}{\partial \beta} = -\frac{1}{k_{B}T^{2}}\frac{\partial}{\partial\beta}\left[ \ln((1+e^{\beta\mu})(1+e^{\beta(\mu-\Delta)})) \right]$
+
+$$\frac{\partial \ln Z}{\partial T} = -\frac{1}{k_{B}T^{2}} \frac{1}{Z} \left[ \mu e^{\beta\mu}(1+e^{\beta(\mu-\Delta)}) + (1+e^{\beta\mu})(\mu-\Delta)e^{\beta(\mu-\Delta)} \right]$$
+
+Sehingga $\langle S \rangle = k_{B}\ln\left[(1+e^{\beta\mu})(1+e^{\beta(\mu-\Delta)})\right]$
+$$-\frac{1}{k_{B}T^{2}} \frac{1}{(1+e^{\beta\mu})(1+e^{\beta(\mu-\Delta)})} \left[ \mu e^{\beta\mu}(1+e^{\beta(\mu-\Delta)}) + (1+e^{\beta\mu})(\mu-\Delta)e^{\beta(\mu-\Delta)} \right]$$</p>
+
+<p>*Soal ini terasa lebih straightforward daripada nomor 1 jika kita hafal ekspresi besaran-besaran pada generalized canonical ensemble.</p>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+</main>
+
+
+    <footer>
+        <p>@ 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id', // Menandai bahwa bahasa asli web ini adalah Indonesia
+                includedLanguages: 'id,en', // Membatasi opsi dropdown HANYA untuk Indonesia dan Inggris
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        if (currentTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeBtn.innerHTML = '☀️';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            if (document.body.getAttribute('data-theme') === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeBtn.innerHTML = '🌙';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeBtn.innerHTML = '☀️';
+            }
+        });
+    </script>
+
+</body>
+</html>

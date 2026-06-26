@@ -161,7 +161,7 @@
         }
 
         /* --- FOOTER --- */
-        footer {
+        footer p{
             text-align: center;
             padding: 2rem 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -275,7 +275,7 @@
             <div class="action-btns">
                 <div id="google_translate_element"></div>
                 
-                <button class="btn" id="theme-btn">🌙 Dark Mode</button>
+                <button class="btn" id="theme-btn">🌙</button>
             </div>
         </nav>
     </header>
@@ -691,7 +691,7 @@ sehingga
 
 
     <footer>
-        <p>&copy; 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        <p>@ 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
     </footer>
 
     <script type="text/javascript">
@@ -711,18 +711,18 @@ sehingga
 
         if (currentTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
-            themeBtn.innerHTML = '☀️ Light Mode';
+            themeBtn.innerHTML = '☀️';
         }
 
         themeBtn.addEventListener('click', () => {
             if (document.body.getAttribute('data-theme') === 'dark') {
                 document.body.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                themeBtn.innerHTML = '🌙 Dark Mode';
+                themeBtn.innerHTML = '🌙';
             } else {
                 document.body.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeBtn.innerHTML = '☀️ Light Mode';
+                themeBtn.innerHTML = '☀️';
             }
         });
     </script>

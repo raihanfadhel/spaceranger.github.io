@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raihan Fadhel | ONMIPA 2025 Kuantum</title>
+    <style>
+        /* --- SKEMA WARNA & VARIABEL --- */
+        :root {
+            --bg-color: #f7ede2; 
+            --text-color: #3d3124;
+            --link-color: #a67c52;
+            --header-bg: #eaddcb;
+            --border-color: #d4c2ab;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #251e16; 
+            --text-color: #f2e6d8;
+            --link-color: #dcb38a;
+            --header-bg: #1c1610;
+            --border-color: #4a3c2d;
+        }
+
+        p {text-align: justify;}
+
+        /* --- STYLING DASAR --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            
+            /* Mencegah Google Translate menggeser halaman ke bawah */
+            top: 0 !important; 
+        }
+
+        /* Menyembunyikan banner atas Google Translate yang muncul otomatis */
+        .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
+        .goog-te-banner-frame { display: none !important; }
+
+        /* --- HEADER & NAVIGASI --- */
+        header {
+            background-color: var(--header-bg);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--link-color);
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        /* --- TOMBOL AKSI & WIDGET TRANSLATE --- */
+        .action-btns {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Modifikasi Dropdown Google Translate agar senada dengan desain elegan */
+        #google_translate_element select {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Menyembunyikan teks 'Powered by Google' */
+        .goog-logo-link, .goog-te-gadget span {
+            display: none !important;
+        }
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0;
+        }
+
+        /* --- KONTEN UTAMA --- */
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        h2, h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer p{
+            text-align: center;
+            padding: 2rem 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            opacity: 0.8;
+        }
+
+        .date {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        .gambar-tengah {
+    display: block;
+    margin: 2rem auto; /* Memberi jarak atas-bawah dan memposisikan gambar di tengah */
+    max-width: 100%; /* Memastikan gambar tidak melebihi lebar layar */
+    width: 400px; /* Kamu bisa mengubah angka ini untuk memperbesar/memperkecil gambar */
+    border-radius: 8px; /* Opsional: Membuat sudut gambar menjadi sedikit membulat/tidak lancip */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Opsional: Memberi efek bayangan tipis agar elegan */
+}
+
+       /* --- STYLING UNTUK NAMA & FOTO DI HEADER --- */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak spasi antara foto dan nama */
+}
+
+.header-avatar {
+    width: 50px; /* Memaksa foto menjadi ukuran kecil/avatar */
+    height: 50px;
+    border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
+    object-fit: cover; /* Mencegah gambar terlihat gepeng/tertarik */
+    border: 2px solid var(--border-color); /* Memberikan garis tepi tipis agar elegan */
+}
+
+        .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: inherit; /* Mengikuti warna teks tema */
+    display: block;
+}
+
+.blog-card:hover {
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transform: translateY(-2px); /* Efek sedikit terangkat saat disentuh kursor */
+}
+
+.blog-card h3 {
+    margin-top: 0;
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+    color: var(--link-color);
+}
+
+.blog-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--link-color);
+}
+    </style>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <div class="header-brand">
+            <img src="images/fotoku.jpeg" alt="Foto Profil" class="header-avatar">
+            <h1>Raihan Fadhel</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="blog.html">Blog</a>
+            
+            <div class="action-btns">
+                <div id="google_translate_element"></div>
+                
+                <button class="btn" id="theme-btn">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    <a href="projects.html" style="display: inline-block; margin-bottom: 2rem; font-size: 0.9rem;">
+        &larr; Return to the project lists
+    </a>
+
+    <h2 style="border-bottom: none; margin-top: 0; padding-bottom: 0;">Pembahasan ONMIPA Fisika Tingkat Nasional Tahun 2025 Subbidang Fisika Modern dan Mekanika Kuantum</h2>
+    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0;">Originally published on May 25th, 2026.</p>
+
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+    <h2>Soal nomor 1</h2>
+
+    <p>Sebuah partikel bermassa $m$ bergerak dalam potensial Osilator Harmonik Isotropik tiga dimensi:
+$$V(x,y,z) = \frac{1}{2}m\omega^{2}(x^{2}+y^{2}+z^{2})$$
+Energi eigen ($E$) dari sistem ini diberikan oleh:
+$$E_{n_{x},n_{y},n_{z}} = \hbar\omega\left(n_{x}+n_{y}+n_{z}+\frac{3}{2}\right)$$
+dengan $n_{x}$, $n_{y}$, $n_{z} \in \{0,1,2,...\}.$</p>
+
+    <ol type="a">
+        <li>Tentukan energi $E$ dan tingkat degenerasi $g$ untuk keadaan tereksitasi kedua sistem ini.</li>
+        <li>Misalkan sistem tersebut berada dalam keadaan $|\Psi\rangle$ yang dinormalisasi dengan energi yang sama dengan keadaan tereksitasi kedua. Keadaan ini didefinisikan sebagai superposisi dari basis terdegenerasinya:
+$$|\Psi\rangle = \frac{1}{\sqrt{3}}|2,0,0\rangle + \frac{1}{\sqrt{3}}|0,2,0\rangle + \frac{i}{\sqrt{3}}|0,0,2\rangle$$
+Hitunglah nilai harapan (ekspektasi) dari operator momentum kuadrat total, $\langle P^{2} \rangle = \langle\Psi|P_{x}^{2}+P_{y}^{2}+P_{z}^{2}|\Psi\rangle$ untuk keadaan $|\Psi\rangle$ ini.</li>
+    </ol>
+
+    <p><b>Jawaban:</b></p>
+
+    <p>a. Energi $E$ untuk keadaan tereksitasi ke-$n$ sistem osilator harmonik isotropik ini diberikan oleh $E_{n} = \hbar\omega\left(n+\frac{3}{2}\right)$. Jika $n=2$, maka $E_{2} = \frac{7}{2}\hbar\omega$.</p>
+
+    <p>Tingkat degenerasi $g$ untuk $E_{2} = \frac{7}{2}\hbar\omega$ ini dapat dihitung dengan mencari konfigurasi $n_{x}, n_{y}$, dan $n_{z}$ sehingga $E_{n_{x},n_{y},n_{z}} = \hbar\omega\left(n_{x}+n_{y}+n_{z}+\frac{3}{2}\right) = \frac{7}{2}\hbar\omega$. Ini akan terpenuhi saat:</p>
+
+    <p>- $n_{x}=2$, $n_{y}=n_{z}=0$ <br>
+- $n_{x}=n_{z}=0$, $n_{y}=2$ <br>
+- $n_{x}=n_{y}=1$, $n_{z}=0$ <br>
+- $n_{x}=n_{z}=1$, $n_{y}=0$ <br>
+- $n_{x}=n_{y}=0$, $n_{z}=2$ <br>
+- $n_{y}=n_{z}=1$, $n_{x}=0$<br>
+sehingga $g=6$.</p>
+    
+
+    <br>
+
+
+    <p>b. Untuk mencari nilai harap $P^{2}$, yaitu $\langle\Psi|P_{x}^{2}+P_{y}^{2}+P_{z}^{2}|\Psi\rangle$, dengan
+$$|\Psi\rangle = \frac{1}{\sqrt{3}}|2,0,0\rangle + \frac{1}{\sqrt{3}}|0,2,0\rangle + \frac{i}{\sqrt{3}}|0,0,2\rangle$$
+digunakan definisi operator tangga naik dan turun:
+$$\hat{a}_{j} = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{r}_{j} + \frac{i}{m\omega}\hat{p}_{j}\right) \quad \text{dan} \quad \hat{a}_{j}^{\dagger} = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{r}_{j} - \frac{i}{m\omega}\hat{p}_{j}\right)$$
+
+dengan $j = x,y,z$ dan $\hat{P}_{j}^{\dagger} = \hat{P}_{j}$</p>
+
+<p>Operator tangga ini akan memiliki sifat-sifat berikut: <br>
+$\hat{a}_{x}|x,y,z\rangle = \sqrt{x}|x-1,y,z\rangle \quad \text{dan} \quad \hat{a}_{x}^{\dagger}|x,y,z\rangle = \sqrt{x+1}|x+1,y,z\rangle$ <br>
+$\hat{a}_{y}|x,y,z\rangle = \sqrt{y}|x,y-1,z\rangle \quad \text{dan} \quad \hat{a}_{y}^{\dagger}|x,y,z\rangle = \sqrt{y+1}|x,y+1,z\rangle$ <br>
+$\hat{a}_{z}|x,y,z\rangle = \sqrt{z}|x,y,z-1\rangle \quad \text{dan} \quad \hat{a}_{z}^{\dagger}|x,y,z\rangle = \sqrt{z+1}|x,y,z+1\rangle$</p>
+
+<p>eliminasi $\hat{r}_{j}$ pada $\hat{a}_{j}$ dan $\hat{a}_{j}^{\dagger}$ menghasilkan
+$\hat{P}_{j} = i\sqrt{\frac{m\omega\hbar}{2}}(\hat{a}_{j}^{\dagger} - \hat{a}_{j})$
+atau $\hat{P}_{j}^{2} = -\frac{m\omega\hbar}{2}(\hat{a}_{j}^{\dagger 2} - \hat{a}_{j}^{\dagger}\hat{a}_{j} - \hat{a}_{j}\hat{a}_{j}^{\dagger} + \hat{a}_{j}^{2})$</p>
+
+<p><b>Pertama, untuk basis $|2,0,0\rangle$</b></p>
+
+<p>$\hat{P}_{x}^{2}|2,0,0\rangle = -\frac{m\omega\hbar}{2}(\sqrt{3}\sqrt{4}|4,0,0\rangle - \sqrt{2}\sqrt{2}|2,0,0\rangle - \sqrt{3}\sqrt{3}|2,0,0\rangle + \sqrt{2}|0,0,0\rangle)$
+$= -\frac{m\omega\hbar}{2}(2\sqrt{3}|4,0,0\rangle - 5|2,0,0\rangle + \sqrt{2}|0,0,0\rangle)$ <br>
+
+$\hat{P}_{y}^{2}|2,0,0\rangle = -\frac{m\omega\hbar}{2}(\sqrt{2}|2,2,0\rangle - 0 - 1|2,0,0\rangle - 0)$
+$= -\frac{m\omega\hbar}{2}(\sqrt{2}|2,2,0\rangle - 1|2,0,0\rangle)$ <br>
+
+$\hat{P}_{z}^{2}|2,0,0\rangle = -\frac{m\omega\hbar}{2}(\sqrt{2}|2,0,2\rangle - 1|2,0,0\rangle)$ <br>
+
+Sehingga $\hat{P}^{2}|2,0,0\rangle = (\hat{P}_{x}^{2} + \hat{P}_{y}^{2} + \hat{P}_{z}^{2})|2,0,0\rangle$
+$= -\frac{m\omega\hbar}{2}(2\sqrt{3}|4,0,0\rangle + \sqrt{2}|2,2,0\rangle + \sqrt{2}|2,0,2\rangle - 7|2,0,0\rangle + \sqrt{2}|0,0,0\rangle)$ <br>
+
+Mengikuti pola yang sama untuk $|0,2,0\rangle$ dan $\hat{P}^{2}|0,0,2\rangle$, diperoleh
+$$\hat{P}^{2}|0,2,0\rangle = -\frac{m\omega\hbar}{2}(2\sqrt{3}|0,4,0\rangle + \sqrt{2}|2,2,0\rangle + \sqrt{2}|0,2,2\rangle - 7|0,2,0\rangle + \sqrt{2}|0,0,0\rangle)$$
+
+$$\hat{P}^{2}|0,0,2\rangle = -\frac{m\omega\hbar}{2}(2\sqrt{3}|0,0,4\rangle + \sqrt{2}|2,0,2\rangle + \sqrt{2}|0,2,2\rangle - 7|0,0,2\rangle + \sqrt{2}|0,0,0\rangle)$$
+
+Dengan menggunakan syarat ortogonalitas, yaitu $\langle m|n \rangle = 0, m \neq n$ dan $1, m=n$, didapatkan
+$$\langle\Psi|\hat{P}^{2}|\Psi\rangle = -\frac{m\omega\hbar}{2}\left(-\frac{7}{3}\langle2,0,0|2,0,0\rangle - \frac{7}{3}\langle0,2,0|0,2,0\rangle - \frac{7}{3}\langle0,0,2|0,0,2\rangle\right)$$
+$$= \frac{7m\omega\hbar}{6}(1+1+1) = \frac{7m\omega\hbar}{2}$$
+</p>
+
+<br>
+
+
+    <h2>Soal nomor 2</h2>
+    
+    <p>Sebuah partikel non-relativistik bermassa $m$ terperangkap dalam sumur potensial tak hingga tiga dimensi (3D) berbentuk kubus dengan panjang sisi $L$. Potensial tak terganggu $(V)$ didefinisikan sebagai:
+$$V(x,y,z) = \begin{cases} 0 & \text{untuk } 0 < x,y,z < L \\ \infty & \text{lainnya} \end{cases}$$
+Partikel tersebut kemudian diberikan gangguan potensial kecil $H^{\prime}$ yang bergantung pada posisi:
+$$H^{\prime} = \lambda \frac{xyz}{L^{3}}$$
+di mana $\lambda$ adalah konstanta real yang sangat kecil, $x, y, z$ adalah koordinat, dan $L$ adalah panjang sisi kubus. Tentukanlah koreksi energi orde-pertama $(E^{(1)})$ untuk keadaan tereksitasi pertama dari partikel tersebut.</p>
+
+
+    <p><b>Jawaban:</b></p>
+
+    <p>Untuk kondisi tidak terganggu, Hamiltonian partikel ini dapat dituliskan sebagai:
+$$-\frac{\hbar^{2}}{2m} \left( \frac{\partial^{2}}{\partial x^{2}} + \frac{\partial^{2}}{\partial y^{2}} + \frac{\partial^{2}}{\partial z^{2}} \right) \Psi = E \Psi$$
+untuk $0 < x,y,z < L$. Ini adalah PDP orde 2. Solusi $\Psi$ dianggap sebagai $\Psi = X(x)Y(y)Z(z)$. Substitusi $\Psi$ pada PDP, diperoleh:
+$$YZ \frac{d^{2}X}{dx^{2}} + XZ \frac{d^{2}Y}{dy^{2}} + XY \frac{d^{2}Z}{dz^{2}} = -\frac{2mE}{\hbar^{2}} XYZ$$
+
+Bagi kedua ruas dengan $\Psi$:
+$$\frac{1}{X}\frac{d^{2}X}{dx^{2}} + \frac{1}{Y}\frac{d^{2}Y}{dy^{2}} + \frac{1}{Z}\frac{d^{2}Z}{dz^{2}} = -\frac{2mE}{\hbar^{2}}$$
+
+Anggap $\frac{1}{X}\frac{d^{2}X}{dx^{2}} = -k_{x}^{2}$, $\frac{1}{Y}\frac{d^{2}Y}{dy^{2}} = -k_{y}^{2}$, dan $\frac{1}{Z}\frac{d^{2}Z}{dz^{2}} = -k_{z}^{2}$, dengan
+$$-k_{x}^{2} - k_{y}^{2} - k_{z}^{2} = -\frac{2mE}{\hbar^{2}}$$
+
+Masing-masing fungsi $X, Y,$ dan $Z$ akan memiliki solusi umum berupa:
+$$X = A_{x}\sin(k_{x}x) + B_{x}\cos(k_{x}x)$$
+$$Y = A_{y}\sin(k_{y}y) + B_{y}\cos(k_{y}y)$$
+$$Z = A_{z}\sin(k_{z}z) + B_{z}\cos(k_{z}z)$$
+
+$\rightarrow$ Aplikasi syarat batas pertama yaitu $X=Y=Z=0$ ketika $x=y=z=0$ didapatkan konstanta $B_{x}=B_{y}=B_{z}=0$.
+
+$\rightarrow$ Syarat batas kedua yaitu $X=Y=Z=0$ ketika $x=y=z=L$, diperoleh
+$$k_{x}=\frac{n_{x}\pi}{L}, \quad k_{y}=\frac{n_{y}\pi}{L}, \quad k_{z}=\frac{n_{z}\pi}{L}, \quad \text{dengan } n_{x},n_{y},n_{z}=1,2,3,...$$
+
+Jika dituliskan, maka
+$$\Psi = A_{x}A_{y}A_{z}\sin\left(\frac{n_{x}\pi x}{L}\right)\sin\left(\frac{n_{y}\pi y}{L}\right)\sin\left(\frac{n_{z}\pi z}{L}\right)$$
+$$\Psi = A\sin\left(\frac{n_{x}\pi x}{L}\right)\sin\left(\frac{n_{y}\pi y}{L}\right)\sin\left(\frac{n_{z}\pi z}{L}\right)$$
+
+Normalisasi $\Psi$ untuk memperoleh $A$,
+$$\int \Psi^{*}\Psi~dxdydz = 1 \rightarrow A^{2}\int_{0}^{L}\int_{0}^{L}\int_{0}^{L}\sin^{2}\left(\frac{n_{x}\pi x}{L}\right)\sin^{2}\left(\frac{n_{y}\pi y}{L}\right)\sin^{2}\left(\frac{n_{z}\pi z}{L}\right)dxdydz = 1$$
+$$A^{2}\int_{0}^{L}\sin^{2}\left(\frac{n_{x}\pi x}{L}\right)dx \int_{0}^{L}\sin^{2}\left(\frac{n_{y}\pi y}{L}\right)dy \int_{0}^{L}\sin^{2}\left(\frac{n_{z}\pi z}{L}\right)dz = 1$$
+
+Integral terhadap $dx$ dapat dievaluasi dengan memanfaatkan $\sin^{2}\theta = \frac{1}{2}(1-\cos(2\theta))$
+$$\int_{0}^{L}\sin^{2}\left(\frac{n_{x}\pi x}{L}\right)dx = \frac{1}{2}\int_{0}^{L}\left(1-\cos\left(\frac{2n_{x}\pi x}{L}\right)\right)dx$$
+$$= \frac{1}{2}(L-0) = \frac{L}{2}$$
+
+Sehingga
+$$\int \Psi^{*}\Psi~dxdydz = A^{2}\left(\frac{L}{2}\right)^{3} = 1$$
+$$A = \left(\frac{2}{L}\right)^{3/2}$$
+
+atau $\Psi = \left(\frac{2}{L}\right)^{3/2}\sin\left(\frac{n_{x}\pi x}{L}\right)\sin\left(\frac{n_{y}\pi y}{L}\right)\sin\left(\frac{n_{z}\pi z}{L}\right)$.</p>
+
+<p>Masukkan kembali ke Hamiltonian, diperoleh $E_{n_{x},n_{y},n_{z}} = \frac{(n_{x}^{2}+n_{y}^{2}+n_{z}^{2})\pi^{2}\hbar^{2}}{2mL^{2}}$</p>
+
+<p>Kita sudah mendapatkan $\Psi$ dan $E$ untuk sistem tak terganggu, yang kemudian bisa ditulis sebagai $\Psi = \Psi^{(0)}$ dan $E = E^{(0)}$.</p>
+
+<p>Kemudian, sistem diganggu dengan potensial kecil $H^{\prime} = \lambda\frac{xyz}{L^{3}}$. Untuk keadaan tereksitasi pertama, energi sistem ini diberikan oleh $\frac{(2^{2}+1^{2}+1^{2})\pi^{2}\hbar^{2}}{2mL^{2}}$.<br>
+
+Energi ini memiliki 3 tingkat degenerasi karena keadaan $|2,1,1\rangle$, $|1,2,1\rangle$, dan $|1,1,2\rangle$ akan menghasilkan $E = \frac{6\pi^{2}\hbar^{2}}{2mL^{2}}$.<br>
+
+Pada kasus tingkat degenerasi ke-$n$, koreksi energi orde pertama dapat dicari dengan menghitung eigenvalue dari matriks $n \times n$.
+$$W_{ij} = \langle\Psi_{i}^{(0)}|H^{\prime}|\Psi_{j}^{(0)}\rangle$$
+
+Untuk kasus tingkat degenerasi 3, $E^{(1)}$ dapat ditentukan dengan menyelesaikan
+$$ \begin{pmatrix} W_{11} & W_{12} & W_{13} \\ W_{21} & W_{22} & W_{23} \\ W_{31} & W_{32} & W_{33} \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \\ \gamma \end{pmatrix} = E^{(1)} \begin{pmatrix} \alpha \\ \beta \\ \gamma \end{pmatrix} $$
+
+Misalkan
+$i=1 = |2,1,1\rangle$
+$i=2 = |1,2,1\rangle$
+dan $i=3 = |1,1,2\rangle$
+
+Pertama-tama, untuk komponen diagonal, kita harus menghitung
+$$W_{ii} = \langle\Psi_{i}^{(0)}|H^{\prime}|\Psi_{i}^{(0)}\rangle$$
+atau secara eksplisit
+$$W_{11} = \left(\frac{2}{L}\right)^{3} \frac{\lambda}{L^{3}} \int_{0}^{L} x \sin^{2}\left(\frac{2\pi x}{L}\right)dx \int_{0}^{L} y \sin^{2}\left(\frac{\pi y}{L}\right)dy \int_{0}^{L} z \sin^{2}\left(\frac{\pi z}{L}\right)dz$$
+$$W_{22} = \left(\frac{2}{L}\right)^{3} \frac{\lambda}{L^{3}} \int_{0}^{L} x \sin^{2}\left(\frac{\pi x}{L}\right)dx \int_{0}^{L} y \sin^{2}\left(\frac{2\pi y}{L}\right)dy \int_{0}^{L} z \sin^{2}\left(\frac{\pi z}{L}\right)dz$$
+$$W_{33} = \left(\frac{2}{L}\right)^{3} \frac{\lambda}{L^{3}} \int_{0}^{L} x \sin^{2}\left(\frac{\pi x}{L}\right)dx \int_{0}^{L} y \sin^{2}\left(\frac{\pi y}{L}\right)dy \int_{0}^{L} z \sin^{2}\left(\frac{2\pi z}{L}\right)dz$$
+
+Dari sini, terlihat $W_{11}, W_{22}, W_{33}$ akan menghasilkan nilai yang sama.
+Penyelesaian $\int_{0}^{L} a \sin^{2}\left(\frac{n\pi a}{L}\right)da, \quad n=1,2$ menghasilkan:
+$$\frac{1}{2}\int_{0}^{L} a \left(1-\cos\left(\frac{2n\pi a}{L}\right)\right)da = \frac{1}{2}\left[ \int_{0}^{L} a~da - \int_{0}^{L} a \cos\left(\frac{2n\pi a}{L}\right)da \right]$$
+$$= \frac{1}{2}\left[ \frac{L^{2}}{2} - \int_{0}^{L} a \cos\left(\frac{2n\pi a}{L}\right)da \right]$$
+
+menggunakan aturan integral parsial, misalkan
+$u = a \Rightarrow du = da$ dan
+$dv = \cos\left(\frac{2n\pi a}{L}\right)da \Rightarrow v = \frac{L}{2n\pi}\sin\left(\frac{2n\pi a}{L}\right)$
+
+$$\int_{0}^{L} a \cos\left(\frac{2n\pi a}{L}\right)da = a \cdot \frac{L}{2n\pi}\sin\left(\frac{2n\pi a}{L}\right)\Bigg|_{0}^{L} - \int_{0}^{L} \frac{L}{2n\pi}\sin\left(\frac{2n\pi a}{L}\right)da$$
+$$= 0 + \frac{L^{2}}{4n^{2}\pi^{2}}\cos\left(\frac{2n\pi a}{L}\right)\Bigg|_{0}^{L} = 0$$
+
+maka
+$$\int_{0}^{L} a \sin^{2}\left(\frac{n\pi a}{L}\right)da = \frac{L^{2}}{4}$$
+
+maka $W_{11} = W_{22} = W_{33} = \left(\frac{2}{L}\right)^{3} \frac{\lambda}{L^{3}} \left(\frac{L^{2}}{4}\right)^{3} = \frac{8}{L^{3}} \frac{\lambda}{L^{3}} \frac{L^{6}}{64} = \frac{\lambda}{8}$
+Untuk komponen off-diagonal, akan terdapat integral yang berbentuk
+$$\int_{0}^{L} a \sin\left(\frac{n\pi a}{L}\right)\sin\left(\frac{m\pi a}{L}\right)da, \quad n \neq m, \quad n,m=1,2$$
+
+ubah
+$$\sin x \sin y = -\frac{1}{2}(\cos(x+y) - \cos(x-y)),$$
+$$\int_{0}^{L} a \sin\left(\frac{n\pi a}{L}\right)\sin\left(\frac{m\pi a}{L}\right)da = -\frac{1}{2} \int_{0}^{L} a \left[ \cos\left(\frac{(n+m)\pi a}{L}\right) - \cos\left(\frac{(n-m)\pi a}{L}\right) \right] da$$
+
+dari hasil aturan integral parsial perhitungan sebelumnya, diketahui
+$$\int_{0}^{L} a \cos\left(\frac{(n+m)\pi a}{L}\right) da = \frac{L^{2}}{\pi^{2}(n+m)^{2}}\cos\left(\frac{(n+m)\pi a}{L}\right)\Bigg|_{0}^{L}$$
+karena
+$$\frac{L^{2}}{\pi^{2}(n+m)^{2}}(\cos((n+m)\pi) - \cos(0)).$$
+$n+m=3$ dengan $n,m=1,2$, maka $\int_{0}^{L} a \cos\left(\frac{(n+m)\pi a}{L}\right) da = -\frac{2L^{2}}{9\pi^{2}}$
+
+sedangkan $\int_{0}^{L} a \cos\left(\frac{(n-m)\pi a}{L}\right) da = \frac{L^{2}}{\pi^{2}(n-m)^{2}}(\cos((n-m)\pi) - \cos(0))$
+$$= -\frac{2L^{2}}{\pi^{2}}$$
+
+atau
+$$\int_{0}^{L} a \sin\left(\frac{n\pi a}{L}\right)\sin\left(\frac{m\pi a}{L}\right)da = -\frac{1}{2} \left( -\frac{2L^{2}}{9\pi^{2}} - \left(-\frac{2L^{2}}{\pi^{2}}\right) \right)$$
+$$= -\frac{8L^{2}}{9\pi^{2}}$$
+
+Sehingga $W_{12} = W_{21} = W_{13} = W_{31} = W_{23} = W_{32} = \left(\frac{2}{L}\right)^{3}\left(\frac{\lambda}{L^{3}}\right)\left(\frac{L^{2}}{4}\right)\left(-\frac{8L^{2}}{9\pi^{2}}\right)^{2}$
+$$= \frac{8}{L^{3}}\frac{\lambda}{L^{3}}\frac{L^{2}}{4}\frac{64L^{4}}{81\pi^{4}} = \frac{128\lambda}{81\pi^{4}}$$
+
+Jika
+$A = \frac{\lambda}{8}$
+dan
+$B = \frac{128\lambda}{81\pi^{4}}$
+
+$$W = \begin{pmatrix} A & B & B \\ B & A & B \\ B & B & A \end{pmatrix}$$
+
+eigen value matrik W dapat ditentukan dengan persamaan karakteristik
+$$|W - EI| = 0$$
+
+misalkan $A-E=x$,
+$$\begin{vmatrix} x & B & B \\ B & x & B \\ B & B & x \end{vmatrix} = 0$$
+
+$\Rightarrow x(x^{2}-B^{2}) - B(Bx-B^{2}) + B(B^{2}-Bx) = 0$ <br>
+$\Rightarrow x(x^{2}-B^{2}) - B(Bx-B^{2}) - B(Bx-B^{2}) = 0$ <br>
+$\Rightarrow x(x^{2}-B^{2}) - 2B(Bx-B^{2}) = 0$ <br>
+$\Rightarrow x^{3} - xB^{2} - 2B^{2}x - 2B^{3} = 0$ <br>
+$\Rightarrow x^{3} - 3B^{2}x - 2B^{3} = 0$ <br>
+
+<b>saya nyerah, pakai photomath buat memfaktorkan.</b> <br>
+
+$\Rightarrow (x-B)^{2}(x+2B) = 0$ <br>
+
+$x_{1} = x_{2} = B$ atau $x_{3} = -2B$. Karena $x = A-E$ <br>
+$E_{1} = E_{2} = A-B = \frac{\lambda}{8} - \frac{128\lambda}{81\pi^{4}}$ <br>
+$E_{3} = A+2B = \frac{\lambda}{8} - \frac{256\lambda}{81\pi^{4}}$ <br>
+
+Ini maknanya $E^{(0)}$ yang terdegenerasi 3, terpecah menjadi 2 tingkat baru setelah diberi gangguan $H^{\prime}$.
+
+</p>
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+</main>
+
+
+    <footer>
+        <p>@ 2026 Raihan Fadhel. Powered by Gemini. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id', // Menandai bahwa bahasa asli web ini adalah Indonesia
+                includedLanguages: 'id,en', // Membatasi opsi dropdown HANYA untuk Indonesia dan Inggris
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        if (currentTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeBtn.innerHTML = '☀️';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            if (document.body.getAttribute('data-theme') === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeBtn.innerHTML = '🌙';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeBtn.innerHTML = '☀️';
+            }
+        });
+    </script>
+
+</body>
+</html>
